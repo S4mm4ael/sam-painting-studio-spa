@@ -18,13 +18,31 @@ function Navbar() {
               </div>
               <div className="hidden sm:ml-6 sm:flex sm:space-x-8">
                 <NavLink
-                  className={isActive =>
+                  className={({isActive}) =>
                     isActive
                       ? "border-teal-400 dark:bg-gray-900 dark:text-white h-full inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium"
-                      : "border-transparent text-gray-500 dark:text-gray-300 dark:hover:text-white inline-flex itemsc-center px-1 pt-1 border-b-2 text-sm font-medium"
+                      : "border-transparent text-gray-500 dark:text-gray-300 dark:hover:text-white inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium"
                   }
                   to={"/"}>
                   Home
+                </NavLink>
+                <NavLink
+                  className={({isActive}) =>
+                    isActive
+                      ? "border-teal-400 dark:bg-gray-900 dark:text-white h-full inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium"
+                      : "border-transparent text-gray-500 dark:text-gray-300 dark:hover:text-white inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium"
+                  }
+                  to={"/about"}>
+                  About
+                </NavLink>
+                <NavLink
+                  className={({isActive}) =>
+                    isActive
+                      ? "border-teal-400 dark:bg-gray-900 dark:text-white h-full inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium"
+                      : "border-transparent text-gray-500 dark:text-gray-300 dark:hover:text-white inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium"
+                  }
+                  to={"/gallery"}>
+                  Gallery
                 </NavLink>
               </div>
             </div>
