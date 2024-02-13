@@ -1,5 +1,5 @@
-import {createCookieSessionStorage} from '@remix-run/node'
-import {createThemeSessionResolver} from 'remix-themes'
+import {createCookieSessionStorage} from '@remix-run/node';
+import {createThemeSessionResolver} from 'remix-themes';
 
 const sessonStorage = createCookieSessionStorage({
   cookie: {
@@ -11,6 +11,6 @@ const sessonStorage = createCookieSessionStorage({
     secrets: ['secret'],
     secure: process.env.NODE_ENV === 'development' ? false : true,
   },
-})
+});
 
-export const themeSessionResolver = createThemeSessionResolver(sessonStorage)
+export const themeSessionResolver = createThemeSessionResolver(sessonStorage);

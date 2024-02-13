@@ -1,5 +1,5 @@
 {
-  "semi": false,
+  "semi": true,
   "tabWidth": 2,
   "printWidth": 100,
   "singleQuote": true,
@@ -7,6 +7,5 @@
   "bracketSameLine": true,
   "bracketSpacing": false,
   "arrowParens": "avoid",
-  "endOfLine": "auto",
-  "prettier.singleQuote": true
+  "endOfLine": "auto"
 }
