@@ -1,5 +1,5 @@
 import {Disclosure} from "@headlessui/react";
-import {Link} from "@remix-run/react";
+import {Link, NavLink} from "@remix-run/react";
 import React from "react";
 
 function Navbar() {
@@ -15,6 +15,17 @@ function Navbar() {
                     Sam <span className="text-teal-400">Painting Studio</span>
                   </h1>
                 </Link>
+              </div>
+              <div className="hidden sm:ml-6 sm:flex sm:space-x-8">
+                <NavLink
+                  className={isActive =>
+                    isActive
+                      ? "border-teal-400 dark:bg-gray-900 dark:text-white h-full inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium"
+                      : "border-transparent text-gray-500 dark:text-gray-300 dark:hover:text-white inline-flex itemsc-center px-1 pt-1 border-b-2 text-sm font-medium"
+                  }
+                  to={"/"}>
+                  Home
+                </NavLink>
               </div>
             </div>
           </div>
