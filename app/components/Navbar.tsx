@@ -1,8 +1,12 @@
 import {Disclosure} from "@headlessui/react";
 import {Link, NavLink} from "@remix-run/react";
 import React from "react";
+import {Theme, useTheme} from "remix-themes";
+import MoonIcon from "./icons/MoonIcon";
+import SunIcon from "./icons/SunIcon";
 
 function Navbar() {
+  const {theme, setTheme} = useTheme();
   return (
     <Disclosure as="nav">
       {({open}) => (
@@ -44,6 +48,12 @@ function Navbar() {
                   to={"/gallery"}>
                   Gallery
                 </NavLink>
+                <button
+                  onClick={() =>
+                    setTheme(prev => (prev === Theme.DARK ? Theme.LIGHT : Theme.DARK))
+                  }>
+                  {theme === Theme.DARK ? <MoonIcon /> : <SunIcon />}
+                </button>
               </div>
             </div>
           </div>
