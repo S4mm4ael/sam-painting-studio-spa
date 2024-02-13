@@ -44,7 +44,7 @@ function App() {
         <PreventFlashOnWrongTheme ssrTheme={Boolean(theme)} />
         <Links />
       </head>
-      <body className="bg-slate-300 text-black dark:text-white dark:bg-gray-900 h-full selection:bg-gray-50 dark:selection:bg-gray-800">
+      <body className="bg-slate-100 text-black dark:text-white dark:bg-gray-900 h-full selection:bg-gray-50 dark:selection:bg-gray-800">
         <Layout>
           <Outlet />
           <ScrollRestoration />

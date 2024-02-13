@@ -6,7 +6,7 @@ import MoonIcon from "./icons/MoonIcon";
 import SunIcon from "./icons/SunIcon";
 
 function Navbar() {
-  const {theme, setTheme} = useTheme();
+  const [theme, setTheme] = useTheme();
   return (
     <Disclosure as="nav">
       {({open}) => (
