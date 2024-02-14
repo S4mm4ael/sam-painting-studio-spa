@@ -3,6 +3,9 @@ import {Link, NavLink} from "@remix-run/react";
 import {Theme, useTheme} from "remix-themes";
 import {BurgerBars, MoonIcon, SunIcon, Xmark} from "../icons";
 import BurgerLink from "./components/BurgerLink";
+import HeaderLink from "./components/HeaderLink";
+import {NavLinks} from "~/global/constants";
+import {NavLinkProps} from "~/global/interfaces";
 
 function Navbar() {
   const [theme, setTheme] = useTheme();
@@ -22,33 +25,9 @@ function Navbar() {
                   </Link>
                 </div>
                 <div className="hidden sm:ml-6 sm:flex sm:space-x-8">
-                  <NavLink
-                    className={({isActive}) =>
-                      isActive
-                        ? "border-teal-400 dark:bg-gray-900 dark:text-white h-full inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium"
-                        : "border-transparent text-gray-500 dark:text-gray-300 dark:hover:text-white inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium"
-                    }
-                    to={"/"}>
-                    Home
-                  </NavLink>
-                  <NavLink
-                    className={({isActive}) =>
-                      isActive
-                        ? "border-teal-400 dark:bg-gray-900 dark:text-white h-full inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium"
-                        : "border-transparent text-gray-500 dark:text-gray-300 dark:hover:text-white inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium"
-                    }
-                    to={"/about"}>
-                    About
-                  </NavLink>
-                  <NavLink
-                    className={({isActive}) =>
-                      isActive
-                        ? "border-teal-400 dark:bg-gray-900 dark:text-white h-full inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium"
-                        : "border-transparent text-gray-500 dark:text-gray-300 dark:hover:text-white inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium"
-                    }
-                    to={"/gallery"}>
-                    Gallery
-                  </NavLink>
+                  {Object.values(NavLinks).map((link, i) => (
+                    <HeaderLink key={i} name={link.name} path={link.path} />
+                  ))}
                   <button
                     onClick={() =>
                       setTheme(prev => (prev === Theme.DARK ? Theme.LIGHT : Theme.DARK))
@@ -70,7 +49,9 @@ function Navbar() {
           </div>
           <Disclosure.Panel className="sm:hidden">
             <div className="pt-2 pb-3 space-y-1">
-              <BurgerLink name="Home" path="/" />
+              {Object.values(NavLinks).map((link, i) => (
+                <BurgerLink key={i} name={link.name} path={link.path} />
+              ))}
             </div>
           </Disclosure.Panel>
         </>
