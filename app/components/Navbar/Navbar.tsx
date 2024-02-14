@@ -28,13 +28,15 @@ function Navbar() {
                     <HeaderLink key={i} name={link.name} path={link.path} />
                   ))}
                 </div>
-                <ThemeToggler />
+                <div className="flex mr-4">
+                  <ThemeToggler />
+                </div>
               </div>
 
               <div className="-mr-2 flex items-center sm:hidden">
                 <Disclosure.Button
                   className="inline-flex items-center p-2 rounded-md text-gray-400
-             hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset 
+             hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset
              focus:reing-teal-500 dark:hover:bg-gray-800">
                   {open ? <Xmark /> : <BurgerBars />}
                 </Disclosure.Button>
