@@ -6,10 +6,9 @@ import BurgerLink from "./components/BurgerLink";
 import HeaderLink from "./components/HeaderLink";
 import {NavLinks} from "~/global/constants";
 import {NavLinkProps} from "~/global/interfaces";
+import ThemeToggler from "../UI/ThemeToggler";
 
 function Navbar() {
-  const [theme, setTheme] = useTheme();
-
   return (
     <Disclosure as="nav">
       {({open}) => (
@@ -28,13 +27,8 @@ function Navbar() {
                   {Object.values(NavLinks).map((link, i) => (
                     <HeaderLink key={i} name={link.name} path={link.path} />
                   ))}
-                  <button
-                    onClick={() =>
-                      setTheme(prev => (prev === Theme.DARK ? Theme.LIGHT : Theme.DARK))
-                    }>
-                    {theme === Theme.DARK ? <SunIcon /> : <MoonIcon />}
-                  </button>
                 </div>
+                <ThemeToggler />
               </div>
 
               <div className="-mr-2 flex items-center sm:hidden">
