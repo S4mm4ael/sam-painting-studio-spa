@@ -11,7 +11,7 @@ import {
 import {PreventFlashOnWrongTheme, ThemeProvider, useTheme} from "remix-themes";
 import stylesheet from "~/tailwind.css";
 import {themeSessionResolver} from "./utils/session.server";
-import Navbar from "./components/Navbar";
+import Navbar from "./components/Navbar/Navbar";
 import {ReactNode} from "react";
 
 export const links: LinksFunction = () => [{rel: "stylesheet", href: stylesheet}];

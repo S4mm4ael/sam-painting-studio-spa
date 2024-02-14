@@ -1,7 +1,8 @@
 import {Disclosure} from "@headlessui/react";
 import {Link, NavLink} from "@remix-run/react";
 import {Theme, useTheme} from "remix-themes";
-import {BurgerBars, MoonIcon, SunIcon, Xmark} from "./icons";
+import {BurgerBars, MoonIcon, SunIcon, Xmark} from "../icons";
+import BurgerLink from "./components/BurgerLink";
 
 function Navbar() {
   const [theme, setTheme] = useTheme();
@@ -67,7 +68,11 @@ function Navbar() {
               </div>
             </div>
           </div>
-          <Disclosure.Panel className="sm:hidden"></Disclosure.Panel>
+          <Disclosure.Panel className="sm:hidden">
+            <div className="pt-2 pb-3 space-y-1">
+              <BurgerLink name="Home" path="/" />
+            </div>
+          </Disclosure.Panel>
         </>
       )}
     </Disclosure>
