@@ -2,7 +2,8 @@ import {LoaderFunctionArgs, json} from "@remix-run/node";
 import {useLoaderData} from "@remix-run/react";
 import {gql} from "graphql-request";
 import React from "react";
-import {Posts} from "~/global/interfaces";
+import {BlogPost} from "~/components";
+import {Posts, PostsItem} from "~/global/interfaces";
 import {api} from "~/utils/api.server";
 
 export async function loader({}: LoaderFunctionArgs) {
@@ -21,12 +22,11 @@ export async function loader({}: LoaderFunctionArgs) {
 
   const posts = await api.request(query);
 
-  return json({posts});
+  return posts;
 }
 
 export function Blog() {
   const {posts} = useLoaderData() as Posts;
-
   return (
     <>
       <div className="divide-y divide-gray-200 dark:divide-gray-700">
@@ -35,6 +35,11 @@ export function Blog() {
             All Blog Posts
           </h1>
         </div>
+        <ul>
+          {posts.map(post => (
+            <BlogPost post={post} key={post.id} />
+          ))}
+        </ul>
       </div>
     </>
   );
