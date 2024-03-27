@@ -1,6 +1,32 @@
+import {LoaderFunctionArgs, json} from "@remix-run/node";
+import {useLoaderData} from "@remix-run/react";
+import {gql} from "graphql-request";
 import React from "react";
+import {Posts} from "~/global/interfaces";
+import {api} from "~/utils/api.server";
 
-function Blog() {
+export async function loader({}: LoaderFunctionArgs) {
+  const query = gql`
+    query Posts {
+      posts {
+        createdAt
+        id
+        overview
+        slug
+        title
+        updatedAt
+      }
+    }
+  `;
+
+  const posts = await api.request(query);
+
+  return json({posts});
+}
+
+export function Blog() {
+  const {posts} = useLoaderData() as Posts;
+
   return (
     <>
       <div className="divide-y divide-gray-200 dark:divide-gray-700">
