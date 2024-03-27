@@ -27,6 +27,7 @@ export async function loader({}: LoaderFunctionArgs) {
 
 export function Blog() {
   const {posts} = useLoaderData() as Posts;
+
   return (
     <>
       <div className="divide-y divide-gray-200 dark:divide-gray-700">
