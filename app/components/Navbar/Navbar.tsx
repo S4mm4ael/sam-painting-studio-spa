@@ -1,14 +1,12 @@
 import {Disclosure} from "@headlessui/react";
-import {Link, NavLink} from "@remix-run/react";
-import {Theme, useTheme} from "remix-themes";
-import {BurgerBars, MoonIcon, SunIcon, Xmark} from "../icons";
+import {Link} from "@remix-run/react";
+import {BurgerBars, Xmark} from "../icons";
 import BurgerLink from "./components/BurgerLink";
 import HeaderLink from "./components/HeaderLink";
 import {NavLinks} from "~/global/constants";
-import {NavLinkProps} from "~/global/interfaces";
-import ThemeToggler from "../UI/ThemeToggler";
+import {ThemeToggler} from "../UI";
 
-function Navbar() {
+export function Navbar() {
   return (
     <Disclosure as="nav">
       {({open}) => (
@@ -55,5 +53,3 @@ function Navbar() {
     </Disclosure>
   );
 }
-
-export default Navbar;

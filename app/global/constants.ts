@@ -3,6 +3,10 @@ export const NavLinks = {
     name: "Home",
     path: "/",
   },
+  Blog: {
+    name: "Blog",
+    path: "/blog",
+  },
   About: {
     name: "About",
     path: "/about",

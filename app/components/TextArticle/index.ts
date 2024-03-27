@@ -1,0 +1,1 @@
+export {TextArticle} from "./TextArticle";
