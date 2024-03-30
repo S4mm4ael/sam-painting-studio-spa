@@ -14,3 +14,14 @@ export interface PostsItem {
 export interface Posts {
   posts: PostsItem[];
 }
+
+export interface PostId {
+  post: {
+    id: string;
+    overview: string;
+    title: string;
+    slug: string;
+    publishedAt: string;
+    body: any;
+  };
+}
