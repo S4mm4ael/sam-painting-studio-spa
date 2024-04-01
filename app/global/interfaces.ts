@@ -25,3 +25,18 @@ export interface PostId {
     body: any;
   };
 }
+
+export interface ProjectItem {
+  id: string;
+  link: string;
+  overview: string;
+  title: string;
+  titleImage: {
+    url: string;
+  };
+  publishedAt: string;
+}
+
+export interface Projects {
+  projects: ProjectItem[];
+}
