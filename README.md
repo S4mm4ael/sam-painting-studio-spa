@@ -1,38 +1,11 @@
-# Welcome to Remix!
+# Sam Painting Studio web-app!
 
-- [Remix Docs](https://remix.run/docs)
+Hi, my name is Siamion and i am a big fan of wargames and especially Warhammer 💕.
+Several years ago this obsession transformed for some kind of part time job 😂.
+Here you can see my personal web app with some of my works and also my price policy 😊.
 
-## Development
+## Motivation
 
-From your terminal:
-
-```sh
-npm run dev
-```
-
-This starts your app in development mode, rebuilding assets on file changes.
-
-## Deployment
-
-First, build your app for production:
-
-```sh
-npm run build
-```
-
-Then run the app in production mode:
-
-```sh
-npm start
-```
-
-Now you'll need to pick a host to deploy it to.
-
-### DIY
-
-If you're familiar with deploying node applications, the built-in Remix app server is production-ready.
-
-Make sure to deploy the output of `remix build`
-
-- `build/`
-- `public/build/`
+- Practise Remix + Tailwind
+- Practise GraphQL + Hygraph as CMS
+- Provide my clients best experience to reach my portfolio
