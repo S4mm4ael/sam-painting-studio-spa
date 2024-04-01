@@ -1,7 +1,7 @@
 import {LoaderFunctionArgs} from "@remix-run/node";
 import {useLoaderData} from "@remix-run/react";
 import {gql} from "graphql-request";
-import {Project} from "~/components/Project";
+import {ProjectsItem} from "~/components/ProjectsItem";
 import {Projects} from "~/global/interfaces";
 import {api} from "~/utils/api.server";
 
@@ -40,7 +40,7 @@ function Gallery() {
       </div>
       <div className="grid gap-4 sm:grid-cols-2 md:gap-6 lg:grid-cols-3 lg:gap-10 pt-8">
         {projects.map(project => (
-          <Project project={project} key={project.id} />
+          <ProjectsItem project={project} key={project.id} />
         ))}
       </div>
     </div>

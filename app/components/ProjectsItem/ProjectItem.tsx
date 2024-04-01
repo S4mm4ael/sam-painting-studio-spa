@@ -6,6 +6,6 @@ interface Props {
   project: ProjectItem;
 }
 
-export function Project({project}: Props) {
+export function ProjectsItem({project}: Props) {
   return <h3>{project.title}</h3>;
 }
