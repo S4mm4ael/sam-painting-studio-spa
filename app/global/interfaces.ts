@@ -28,7 +28,7 @@ export interface PostId {
 
 export interface ProjectItem {
   id: string;
-  link: string;
+  slug: string;
   overview: string;
   title: string;
   titleImage: {

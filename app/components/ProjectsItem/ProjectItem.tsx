@@ -7,5 +7,25 @@ interface Props {
 }
 
 export function ProjectsItem({project}: Props) {
-  return <h3>{project.title}</h3>;
+  return (
+    <article
+      className="overflow-hidden rounded-lg border border-gray-100 bg-white shadow-sm
+     dark:border-gray-800 dark:bg-gray-800 dark:shadow-gray-700/25">
+      <img
+        src={project.titleImage.url}
+        alt={project.title + "image"}
+        className="h-56 w-fill object-cover"
+      />
+      <div className="p-4 sm:p-6 ">
+        <Link to={project.slug}>
+          <h3 className="text-lg font-medium text-gray-900 dark:text-white">{project.title}</h3>
+        </Link>
+        <p
+          className="mt-2 line-clamp-3 text-sm leading-relaxed 
+        text-gray-500 dark:text-gray-400">
+          {project.overview}
+        </p>
+      </div>
+    </article>
+  );
 }

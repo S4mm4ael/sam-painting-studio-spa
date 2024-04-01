@@ -10,7 +10,7 @@ export async function loader({}: LoaderFunctionArgs) {
     query Projects {
       projects {
         id
-        link
+        slug
         overview
         title
         titleImage {
