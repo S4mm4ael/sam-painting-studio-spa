@@ -17,7 +17,9 @@ export function ProjectsItem({project}: Props) {
         className="h-56 w-fill object-cover"
       />
       <div className="p-4 sm:p-6 ">
-        <Link to={project.slug}>
+        <Link
+          to={project.slug}
+          className="flex gap-2 transition ease-in-out delay-200 hover:-translate-y-1 hover:scale-105">
           <h3 className="text-lg font-medium text-gray-900 dark:text-white">{project.title}</h3>
         </Link>
         <p
