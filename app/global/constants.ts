@@ -8,7 +8,7 @@ export const NavLinks = {
     path: "/blog",
   },
   About: {
-    name: "About",
+    name: "About me",
     path: "/about",
   },
   Gallery: {
