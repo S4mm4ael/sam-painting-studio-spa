@@ -13,16 +13,6 @@ export default function AboutPage() {
       <div className="items-center spacey-2 xl:grid xl:grid-cols-3 xl:gap-x-8 xl:space-y-0">
         <div className="prose max-w-none prose-lg pt-8 pb-8 dark:prose-invert xl:col-span-2">
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eget odio cursus purus
-            tempor mattis. Sed sagittis fringilla justo non tincidunt. Duis commodo purus at pretium
-            tincidunt. Duis a scelerisque arcu, at feugiat lacus. Pellentesque habitant morbi
-            tristique senectus et netus et malesuada fames ac turpis egestas. Nulla bibendum, metus
-            ut sollicitudin mattis, nisi est porta leo, sed tempor diam elit non est. Morbi pulvinar
-            consectetur lorem, ut rutrum nulla. Praesent non nibh turpis. Quisque volutpat ex a ex
-            iaculis commodo. Pellentesque accumsan tortor sed volutpat vehicula. Donec elementum
-            nisi est, vel egestas justo aliquet ut.
-          </p>
-          <p>
             Integer euismod ante in lacus sollicitudin condimentum. Pellentesque habitant morbi
             tristique senectus et netus et malesuada fames ac turpis egestas. Ut ullamcorper ante at
             est dictum aliquam. Proin placerat tellus non est imperdiet, et varius diam posuere.
