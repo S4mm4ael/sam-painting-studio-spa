@@ -10,9 +10,9 @@ import {
 } from "@remix-run/react";
 import {PreventFlashOnWrongTheme, ThemeProvider, useTheme} from "remix-themes";
 import stylesheet from "~/tailwind.css";
-import {themeSessionResolver} from "./utils/session.server";
-import {Navbar} from "./components";
+import {themeSessionResolver} from "./utils";
 import {ReactNode} from "react";
+import {Layout} from "./components/Layout";
 
 export const links: LinksFunction = () => [{rel: "stylesheet", href: stylesheet}];
 
@@ -53,14 +53,5 @@ function App() {
         </Layout>
       </body>
     </html>
-  );
-}
-
-function Layout({children}: {children: ReactNode}) {
-  return (
-    <div>
-      <Navbar />
-      <main className="max-w-6xl mx-auto px-4 sm:px-8 lg:px-8">{children}</main>
-    </div>
   );
 }
