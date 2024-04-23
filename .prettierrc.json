@@ -2,9 +2,9 @@
   "semi": true,
   "tabWidth": 2,
   "printWidth": 100,
-  "singleQuote": false,
+  "singleQuote": true,
   "trailingComma": "es5",
-  "bracketSameLine": true,
+  "bracketSameLine": false,
   "bracketSpacing": false,
   "arrowParens": "avoid",
   "endOfLine": "auto"

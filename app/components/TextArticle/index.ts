@@ -1,1 +1,1 @@
-export {TextArticle} from "./TextArticle";
+export {TextArticle} from './TextArticle';

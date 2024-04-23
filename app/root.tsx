@@ -1,11 +1,11 @@
-import type {LinksFunction, LoaderFunctionArgs} from "@remix-run/node";
-import {useLoaderData} from "@remix-run/react";
-import {ThemeProvider} from "remix-themes";
-import stylesheet from "~/tailwind.css";
-import {themeSessionResolver} from "./utils";
-import App from "./app";
+import type {LinksFunction, LoaderFunctionArgs} from '@remix-run/node';
+import {useLoaderData} from '@remix-run/react';
+import {ThemeProvider} from 'remix-themes';
+import stylesheet from '~/tailwind.css';
+import {themeSessionResolver} from './utils';
+import App from './app';
 
-export const links: LinksFunction = () => [{rel: "stylesheet", href: stylesheet}];
+export const links: LinksFunction = () => [{rel: 'stylesheet', href: stylesheet}];
 
 export async function loader({request}: LoaderFunctionArgs) {
   const {getTheme} = await themeSessionResolver(request);

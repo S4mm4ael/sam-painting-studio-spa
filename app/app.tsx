@@ -6,16 +6,17 @@ import {
   Scripts,
   ScrollRestoration,
   useLoaderData,
-} from "@remix-run/react";
-import {PreventFlashOnWrongTheme, useTheme} from "remix-themes";
-import {loader} from "./root";
-import {Layout} from "./components/Layout";
+} from '@remix-run/react';
+import {PreventFlashOnWrongTheme, useTheme} from 'remix-themes';
+import {loader} from './root';
+import {Layout} from './components/Layout';
 
 export default function App() {
   const {theme} = useLoaderData<typeof loader>();
   const [themeX] = useTheme();
+
   return (
-    <html lang="en" data-theme={themeX ?? ""}>
+    <html lang="en" data-theme={themeX ?? ''}>
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
