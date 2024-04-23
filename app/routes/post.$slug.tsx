@@ -55,7 +55,7 @@ function PostSlug() {
                 img: ({src, altText, height, width}) => {
                   return <img src={src} alt={altText} height={height} width={width} />;
                 },
-                a: ({children, openInNewTab, href, rel, ...rest}) => {
+                a: ({children, openInNewTab, href, ...rest}) => {
                   return (
                     <a
                       href={href}
