@@ -1,11 +1,10 @@
-import {RichText} from "@graphcms/rich-text-react-renderer";
-import {LoaderFunctionArgs} from "@remix-run/node";
-import {useLoaderData} from "@remix-run/react";
-import {gql} from "graphql-request";
-import React from "react";
-import {DateString} from "~/components/UI";
-import {PostId} from "~/global/interfaces";
-import {api} from "~/utils/api.server";
+import {RichText} from '@graphcms/rich-text-react-renderer';
+import {LoaderFunctionArgs} from '@remix-run/node';
+import {useLoaderData} from '@remix-run/react';
+import {gql} from 'graphql-request';
+import {DateString} from '~/components/UI';
+import {PostId} from '~/global/interfaces';
+import {api} from '~/utils/api.server';
 
 export async function loader({params}: LoaderFunctionArgs) {
   const query = gql`
@@ -41,7 +40,8 @@ function PostSlug() {
         <div>
           <h1
             className="text-center text-3xl font-extrabold leading-9 tracking-tight text-gray-900
-             dark:text-gray-100 sm:text-4xl sm:leading-10 md:text-5xl md:leading-14">
+             dark:text-gray-100 sm:text-4xl sm:leading-10 md:text-5xl md:leading-14"
+          >
             {post.title}
           </h1>
         </div>
@@ -59,9 +59,11 @@ function PostSlug() {
                   return (
                     <a
                       href={href}
-                      target={openInNewTab ? "_blank" : "_self"}
+                      target={openInNewTab ? '_blank' : '_self'}
+                      rel="noreferrer"
                       {...rest}
-                      className="text-teal-500 hover:text-teal-600">
+                      className="text-teal-500 hover:text-teal-600"
+                    >
                       {children}
                     </a>
                   );

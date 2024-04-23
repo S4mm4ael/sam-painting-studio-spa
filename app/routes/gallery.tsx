@@ -1,11 +1,10 @@
-import {LoaderFunctionArgs} from "@remix-run/node";
-import {useLoaderData} from "@remix-run/react";
-import {gql} from "graphql-request";
-import {ProjectsItem} from "~/components/ProjectsItem";
-import {Projects} from "~/global/interfaces";
-import {api} from "~/utils/api.server";
+import {useLoaderData} from '@remix-run/react';
+import {gql} from 'graphql-request';
+import {ProjectsItem} from '~/components/ProjectsItem';
+import {Projects} from '~/global/interfaces';
+import {api} from '~/utils/api.server';
 
-export async function loader({}: LoaderFunctionArgs) {
+export async function loader() {
   const query = gql`
     query Projects {
       projects {
@@ -34,7 +33,8 @@ function Gallery() {
       <div className="space-y2 pt-6 pb-8 md:spece-y-5">
         <h1
           className="text-3xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 
-        sm:text-4xl sm:leading-10 md:text-6xl md:leading-14">
+        sm:text-4xl sm:leading-10 md:text-6xl md:leading-14"
+        >
           Gallery
         </h1>
       </div>

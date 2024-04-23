@@ -1,7 +1,3 @@
-import type {MetaFunction} from "@remix-run/node";
-import photo from "../../public/my-photo.jpg";
-import {InstagramIcon} from "~/components/icons";
-
 export default function AboutPage() {
   return (
     <div className="divide-y divide-gray-200 dark:divide-gray-700">

@@ -1,12 +1,10 @@
-import {LoaderFunctionArgs, json} from "@remix-run/node";
-import {useLoaderData} from "@remix-run/react";
-import {gql} from "graphql-request";
-import React from "react";
-import {BlogPost} from "~/components";
-import {Posts, PostsItem} from "~/global/interfaces";
-import {api} from "~/utils/api.server";
+import {useLoaderData} from '@remix-run/react';
+import {gql} from 'graphql-request';
+import {BlogPost} from '~/components';
+import {Posts} from '~/global/interfaces';
+import {api} from '~/utils/api.server';
 
-export async function loader({}: LoaderFunctionArgs) {
+export async function loader() {
   const query = gql`
     query Posts {
       posts {
