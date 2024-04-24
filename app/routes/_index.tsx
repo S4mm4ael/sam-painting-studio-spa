@@ -2,13 +2,30 @@
 import type {MetaFunction} from '@remix-run/node';
 import photo from '../../public/my-photo.jpg';
 import {InstagramIcon} from '~/components/icons';
-import {RouteHeader} from '~/components';
+import {RouteHeader, TextParagraph} from '~/components';
 
 export const meta: MetaFunction = () => {
   return [
     {title: 'Sam painting studio'},
     {name: 'Painting service', content: 'Welcome to my studio page!'},
   ];
+};
+
+const texts = [
+  `Please reach out with your goals, and I'll provide you with a personalized quote.
+Pricing depends on miniature size and intricacy.`,
+  ` I'll collaborate closely with you to deliver a tailor-made and distinctive painting
+service. I have a genuine passion for both painting and gaming, ensuring your newly
+painted miniatures exceed your expectations. Whether you have a clear vision or need
+assistance, we'll embark on a creative journey to discover the perfect paint scheme.`,
+  `  My services encompass painting full armies, warbands, entire board games, terrain, 3D
+prints, assembly, and custom basing.`,
+  ` I'll keep you informed with progress pictures at every stage to guarantee your complete
+satisfaction.`,
+];
+
+const renderParagraps = () => {
+  return texts.map((paragraph, index) => <TextParagraph text={paragraph} key={index} />);
 };
 
 export default function IndexPage() {
@@ -34,26 +51,7 @@ export default function IndexPage() {
             </a>
           </div>
         </div>
-        <div className="prose max-w-none prose-lg pt-8 pb-8 dark:prose-invert xl:col-span-2">
-          <p>
-            Please reach out with your goals, and I'll provide you with a personalized quote.
-            Pricing depends on miniature size and intricacy.
-          </p>
-          <p>
-            I'll collaborate closely with you to deliver a tailor-made and distinctive painting
-            service. I have a genuine passion for both painting and gaming, ensuring your newly
-            painted miniatures exceed your expectations. Whether you have a clear vision or need
-            assistance, we'll embark on a creative journey to discover the perfect paint scheme.
-          </p>
-          <p>
-            My services encompass painting full armies, warbands, entire board games, terrain, 3D
-            prints, assembly, and custom basing.
-          </p>
-          <p>
-            I'll keep you informed with progress pictures at every stage to guarantee your complete
-            satisfaction.
-          </p>
-        </div>
+        <div className="xl:col-span-2">{renderParagraps()}</div>
       </div>
     </div>
   );
