@@ -1,21 +1,13 @@
-import {useLoaderData} from '@remix-run/react';
-import {gql} from 'graphql-request';
-import {BlogPost, RouteHeader} from '~/components';
-import {Posts} from '~/global/interfaces';
-import {api} from '~/utils/api.server';
+import { useLoaderData } from '@remix-run/react';
+import { gql } from 'graphql-request';
+import { BlogPost, RouteHeader } from '~/components';
+import { postsQuery } from '~/global';
+import { Posts } from '~/global/interfaces';
+import { api } from '~/utils/api.server';
 
 export async function loader() {
   const query = gql`
-    query Posts {
-      posts {
-        createdAt
-        id
-        overview
-        slug
-        title
-        updatedAt
-      }
-    }
+    ${postsQuery}
   `;
 
   const posts = await api.request(query);

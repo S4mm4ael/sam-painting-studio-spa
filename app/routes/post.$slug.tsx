@@ -1,25 +1,18 @@
-import {RichText} from '@graphcms/rich-text-react-renderer';
-import {LoaderFunctionArgs} from '@remix-run/node';
-import {useLoaderData} from '@remix-run/react';
-import {gql} from 'graphql-request';
-import {DateString} from '~/components/UI';
-import {PostId} from '~/global/interfaces';
-import {api} from '~/utils/api.server';
+import { RichText } from '@graphcms/rich-text-react-renderer';
+import { LoaderFunctionArgs } from '@remix-run/node';
+import { useLoaderData } from '@remix-run/react';
+import { gql } from 'graphql-request';
+import { DateString } from '~/components/UI';
+import { postQuery } from '~/global';
+import { PostId } from '~/global/interfaces';
+import { api } from '~/utils/api.server';
 
 export async function loader({params}: LoaderFunctionArgs) {
+
+  if (!params.slug) return
+  
   const query = gql`
-  query Posts {
-    post(where: {slug: "${params.slug}"}) {
-      id
-      overview
-      publishedAt
-      slug
-      title
-      body {
-        raw
-      }
-    }
-  }
+  ${postQuery(params.slug )}
   `;
 
   const post = await api.request(query);

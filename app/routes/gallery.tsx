@@ -1,24 +1,14 @@
-import {useLoaderData} from '@remix-run/react';
-import {gql} from 'graphql-request';
-import {RouteHeader} from '~/components';
-import {ProjectsItem} from '~/components/ProjectsItem';
-import {Projects} from '~/global/interfaces';
-import {api} from '~/utils/api.server';
+import { useLoaderData } from '@remix-run/react';
+import { gql } from 'graphql-request';
+import { RouteHeader } from '~/components';
+import { ProjectsItem } from '~/components/ProjectsItem';
+import { projectsQuery } from '~/global';
+import { Projects } from '~/global/interfaces';
+import { api } from '~/utils/api.server';
 
 export async function loader() {
   const query = gql`
-    query Projects {
-      projects {
-        id
-        slug
-        overview
-        title
-        titleImage {
-          url
-        }
-        publishedAt
-      }
-    }
+   ${projectsQuery} 
   `;
 
   const projects = await api.request(query);
