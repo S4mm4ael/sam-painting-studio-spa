@@ -14,3 +14,29 @@ export interface PostsItem {
 export interface Posts {
   posts: PostsItem[];
 }
+
+export interface PostId {
+  post: {
+    id: string;
+    overview: string;
+    title: string;
+    slug: string;
+    publishedAt: string;
+    body: any;
+  };
+}
+
+export interface ProjectItem {
+  id: string;
+  slug: string;
+  overview: string;
+  title: string;
+  titleImage: {
+    url: string;
+  };
+  publishedAt: string;
+}
+
+export interface Projects {
+  projects: ProjectItem[];
+}
