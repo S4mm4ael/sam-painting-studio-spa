@@ -2,24 +2,16 @@ import {RichText} from '@graphcms/rich-text-react-renderer';
 import {LoaderFunctionArgs} from '@remix-run/node';
 import {useLoaderData} from '@remix-run/react';
 import {gql} from 'graphql-request';
-import {DateString} from '~/components/UI';
+import {DateString, PostHeader} from '~/components/UI';
+import {postQuery} from '~/global';
 import {PostId} from '~/global/interfaces';
 import {api} from '~/utils/api.server';
 
 export async function loader({params}: LoaderFunctionArgs) {
+  if (!params.slug) return;
+
   const query = gql`
-  query Posts {
-    post(where: {slug: "${params.slug}"}) {
-      id
-      overview
-      publishedAt
-      slug
-      title
-      body {
-        raw
-      }
-    }
-  }
+    ${postQuery(params.slug)}
   `;
 
   const post = await api.request(query);
@@ -29,6 +21,7 @@ export async function loader({params}: LoaderFunctionArgs) {
 
 function PostSlug() {
   const {post} = useLoaderData() as PostId;
+  document.title = post.title;
   return (
     <div className="xl:divide-y xl:divide-gray-200 xl:dark:divide-gray-700 lg:px-48">
       <header className="pt-6 xl:pb-6">
@@ -38,12 +31,7 @@ function PostSlug() {
           </div>
         </div>
         <div>
-          <h1
-            className="text-center text-3xl font-extrabold leading-9 tracking-tight text-gray-900
-             dark:text-gray-100 sm:text-4xl sm:leading-10 md:text-5xl md:leading-14"
-          >
-            {post.title}
-          </h1>
+          <PostHeader title={post.title} />
         </div>
       </header>
       <div className="divide-y divide-gray-2000 pb-8 dark:divide-gray-700 xl:divide-y-0">
