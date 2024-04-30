@@ -1,5 +1,10 @@
+import {MetaFunction} from '@remix-run/node';
 import {RouteHeader, TextParagraph} from '~/components';
 import {texts} from '~/global';
+
+export const meta: MetaFunction = () => {
+  return [{title: 'About me'}];
+};
 
 export default function AboutPage() {
   const renderParagraphs = () => {

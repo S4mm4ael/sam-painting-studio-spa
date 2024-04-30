@@ -1,9 +1,14 @@
-import { useLoaderData } from '@remix-run/react';
-import { gql } from 'graphql-request';
-import { BlogPost, RouteHeader } from '~/components';
-import { postsQuery } from '~/global';
-import { Posts } from '~/global/interfaces';
-import { api } from '~/utils/api.server';
+import {MetaFunction} from '@remix-run/node';
+import {useLoaderData} from '@remix-run/react';
+import {gql} from 'graphql-request';
+import {BlogPost, RouteHeader} from '~/components';
+import {postsQuery} from '~/global';
+import {Posts} from '~/global/interfaces';
+import {api} from '~/utils/api.server';
+
+export const meta: MetaFunction = () => {
+  return [{title: 'Blog'}];
+};
 
 export async function loader() {
   const query = gql`

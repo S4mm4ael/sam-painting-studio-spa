@@ -1,14 +1,19 @@
-import { useLoaderData } from '@remix-run/react';
-import { gql } from 'graphql-request';
-import { RouteHeader } from '~/components';
-import { ProjectsItem } from '~/components/ProjectsItem';
-import { projectsQuery } from '~/global';
-import { Projects } from '~/global/interfaces';
-import { api } from '~/utils/api.server';
+import {MetaFunction} from '@remix-run/node';
+import {useLoaderData} from '@remix-run/react';
+import {gql} from 'graphql-request';
+import {RouteHeader} from '~/components';
+import {ProjectsItem} from '~/components/ProjectsItem';
+import {projectsQuery} from '~/global';
+import {Projects} from '~/global/interfaces';
+import {api} from '~/utils/api.server';
+
+export const meta: MetaFunction = () => {
+  return [{title: 'Gallery'}];
+};
 
 export async function loader() {
   const query = gql`
-   ${projectsQuery} 
+    ${projectsQuery}
   `;
 
   const projects = await api.request(query);

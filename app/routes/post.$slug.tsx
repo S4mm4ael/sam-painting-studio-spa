@@ -21,6 +21,7 @@ export async function loader({params}: LoaderFunctionArgs) {
 
 function PostSlug() {
   const {post} = useLoaderData() as PostId;
+  document.title = post.title;
   return (
     <div className="xl:divide-y xl:divide-gray-200 xl:dark:divide-gray-700 lg:px-48">
       <header className="pt-6 xl:pb-6">
