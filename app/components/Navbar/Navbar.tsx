@@ -1,10 +1,10 @@
-import {Disclosure} from "@headlessui/react";
-import {Link} from "@remix-run/react";
-import {BurgerBars, Xmark} from "../icons";
-import BurgerLink from "./components/BurgerLink";
-import HeaderLink from "./components/HeaderLink";
-import {NavLinks} from "~/global/constants";
-import {ThemeToggler} from "../UI";
+import {Disclosure} from '@headlessui/react';
+import {Link} from '@remix-run/react';
+import {NavLinks} from '~/global/constants';
+import {LanguageToggler, ThemeToggler} from '../UI';
+import {BurgerBars, Xmark} from '../icons';
+import BurgerLink from './components/BurgerLink';
+import HeaderLink from './components/HeaderLink';
 
 export function Navbar() {
   return (
@@ -26,7 +26,8 @@ export function Navbar() {
                     <HeaderLink key={i} name={link.name} path={link.path} />
                   ))}
                 </div>
-                <div className="flex mr-4">
+                <div className="flex mr-4 gap-4">
+                  <LanguageToggler />
                   <ThemeToggler />
                 </div>
               </div>
@@ -35,7 +36,8 @@ export function Navbar() {
                 <Disclosure.Button
                   className="inline-flex items-center p-2 rounded-md text-gray-400
              hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset
-             focus:reing-teal-500 dark:hover:bg-gray-800">
+             focus:reing-teal-500 dark:hover:bg-gray-800"
+                >
                   {open ? <Xmark /> : <BurgerBars />}
                 </Disclosure.Button>
               </div>
