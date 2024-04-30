@@ -1,3 +1,9 @@
+import {useState} from 'react';
+
 export function LanguageToggler() {
-  return <div className="flex justify-center items-center cursor-pointer font-bold">PL/EN</div>;
+  const [isPolish, setIsPolish] = useState(true);
+
+  return (
+    <button onClick={() => setIsPolish(prev => !prev)}>{isPolish ? <p>PL</p> : <p>EN</p>}</button>
+  );
 }
