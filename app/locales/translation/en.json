@@ -1,0 +1,16 @@
+{
+  "homePage": {
+    "welcomeParagraphs": [
+      "Please reach out with your goals, and I'll provide you with a personalized quote.Pricing depends on miniature size and intricacy.",
+      "I'll collaborate closely with you to deliver a tailor-made and distinctive painting service. I have a genuine passion for both painting and gaming, ensuring your newly painted miniatures exceed your expectations. Whether you have a clear vision or need assistance, we'll embark on a creative journey to discover the perfect paint scheme.",
+      "My services encompass painting full armies, warbands, entire board games, terrain, 3D prints, assembly, and custom basing.",
+      "I'll keep you informed with progress pictures at every stage to guarantee your complete satisfaction."
+    ]
+  },
+  "aboutPage": {
+    "aboutMe": [
+      "Integer euismod ante in lacus sollicitudin condimentum. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Ut ullamcorper ante at est dictum aliquam. Proin placerat tellus non est imperdiet, et varius diam posuere. Pellentesque efficitur, lorem vitae finibus imperdiet, lacus tellus ultricies turpis, finibus feugiat sapien nisl in velit. Curabitur pretium elit non nulla malesuada laoreet. Aliquam eget efficitur purus, in vulputate tellus.", " Vestibulum rutrum egestas tortor eu iaculis. Vivamus eget lacus id enim gravida maximus ac et erat. Praesent gravida cursus sapien, et facilisis sem tristique tincidunt. Cras nec pulvinar lacus. Vestibulum convallis venenatis augue vitae venenatis. Ut vestibulum arcu quis blandit consectetur. In luctus justo quis pulvinar feugiat. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.", " Praesent scelerisque rutrum magna non laoreet. Phasellus imperdiet accumsan nulla a viverra. Praesent sit amet aliquet metus. Ut feugiat gravida urna, ut posuere purus commodo in. Donec lacinia nulla urna, in fermentum justo scelerisque sed. Vivamus
+      vestibulum sem ut sapien pellentesque, ac sodales eros vulputate. Morbi neque arcu, eleifend nec diam id, mattis ornare eros."
+     ]
+  }
+}

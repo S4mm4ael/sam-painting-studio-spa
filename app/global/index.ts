@@ -1,2 +1,2 @@
+export {texts} from '../locales/translation/texts';
 export * from './queries';
-export {texts} from './translate/texts';
