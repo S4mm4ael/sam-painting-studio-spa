@@ -20,6 +20,7 @@
     "@remix-run/serve": "^2.6.0",
     "graphql": "^16.8.1",
     "graphql-request": "^6.1.0",
+    "i18n": "^0.15.1",
     "isbot": "^4.1.0",
     "prettier": "^3.1.1",
     "prismjs": "^1.29.0",
