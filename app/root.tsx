@@ -1,4 +1,4 @@
-import type {LoaderFunctionArgs} from '@remix-run/node';
+import type {LinksFunction, LoaderFunctionArgs} from '@remix-run/node';
 import {
   Links,
   LiveReload,
@@ -8,9 +8,12 @@ import {
   ScrollRestoration,
   useLoaderData,
 } from '@remix-run/react';
-import {PreventFlashOnWrongTheme, useTheme} from 'remix-themes';
+import {PreventFlashOnWrongTheme, ThemeProvider, useTheme} from 'remix-themes';
+import stylesheet from '~/tailwind.css';
 import {Layout} from './components/Layout';
 import {themeSessionResolver} from './utils/session.server';
+
+export const links: LinksFunction = () => [{rel: 'stylesheet', href: stylesheet}];
 
 export async function loader({request}: LoaderFunctionArgs) {
   const {getTheme} = await themeSessionResolver(request);
@@ -20,7 +23,16 @@ export async function loader({request}: LoaderFunctionArgs) {
   };
 }
 
-export default function App() {
+export default function AppWithProvider() {
+  const {theme} = useLoaderData<typeof loader>();
+  return (
+    <ThemeProvider specifiedTheme={theme} themeAction="/action/set-theme">
+      <App />
+    </ThemeProvider>
+  );
+}
+
+function App() {
   const {theme} = useLoaderData<typeof loader>();
   const [themeX] = useTheme();
 
