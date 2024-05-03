@@ -1,6 +1,5 @@
-import React from "react";
-import {useTheme, Theme} from "remix-themes";
-import {SunIcon, MoonIcon} from "../icons";
+import {Theme, useTheme} from 'remix-themes';
+import {MoonIcon, SunIcon} from '../icons';
 
 export function ThemeToggler() {
   const [theme, setTheme] = useTheme();
